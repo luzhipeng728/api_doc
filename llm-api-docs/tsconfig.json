@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "preserve",
+    "types": ["vitepress/client", "node"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [".vitepress/*"]
+    }
+  },
+  "include": [
+    "docs/**/*.ts",
+    "docs/**/*.vue",
+    ".vitepress/**/*.ts",
+    ".vitepress/**/*.vue"
+  ],
+  "exclude": ["node_modules", "dist"]
+}

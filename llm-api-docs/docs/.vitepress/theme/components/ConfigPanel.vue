@@ -6,9 +6,10 @@
         id="base-url"
         v-model="localBaseUrl"
         type="text"
-        placeholder="https://api.openai.com"
+        placeholder="例如: https://api.openai.com/v1 或您的代理地址"
         @blur="updateConfig"
       />
+      <small class="form-hint">填写 API 基础地址,支持第三方代理服务</small>
     </div>
     <div class="form-group">
       <label for="api-key">API Key</label>
@@ -16,9 +17,10 @@
         id="api-key"
         v-model="localApiKey"
         type="password"
-        placeholder="sk-..."
+        placeholder="填写您的 API 密钥,如: sk-proj-xxx 或 sk-ant-xxx"
         @blur="updateConfig"
       />
+      <small class="form-hint">密钥仅保存在浏览器本地,不会上传到服务器</small>
     </div>
   </div>
   <div class="config-actions">
@@ -87,6 +89,18 @@ function clearConfig() {
 </script>
 
 <style scoped>
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-hint {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+  line-height: 1.4;
+}
+
 .config-actions {
   display: flex;
   gap: 1rem;

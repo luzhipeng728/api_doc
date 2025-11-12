@@ -17,9 +17,10 @@
             <input
               v-model="localConfig.baseUrl"
               type="text"
-              placeholder="https://api.openai.com"
+              placeholder="例如: https://api.openai.com/v1 或您的代理地址"
               class="form-input"
             />
+            <small class="form-hint">填写 API 基础地址,支持第三方代理服务</small>
           </div>
 
           <div class="form-group">
@@ -27,9 +28,10 @@
             <input
               v-model="localConfig.apiKey"
               type="password"
-              placeholder="sk-..."
+              placeholder="填写您的 API 密钥,如: sk-proj-xxx 或 sk-ant-xxx"
               class="form-input"
             />
+            <small class="form-hint">密钥仅保存在浏览器本地,不会上传到服务器</small>
           </div>
         </div>
 
@@ -235,5 +237,13 @@ function saveConfig() {
 
 .btn-secondary:hover {
   background: var(--vp-c-bg-mute);
+}
+
+.form-hint {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+  line-height: 1.4;
 }
 </style>
